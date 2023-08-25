@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>Liste des projets soumis</title>
+</head>
+<body>
+    <h1>Liste des projets soumis</h1>
+    <ul>
+        {% for projet_etudiant in projets_etudiant %}
+            <li>
+                <a href="{% url 'telecharger_projet_soumis' projet_etudiant.id %}">{{ projet_etudiant.intitule }}</a>
+                - Matière : {{ projet_etudiant.matiere }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>Télécharger le projet soumis</title>
+</head>
+<body>
+    <h1>Télécharger le projet soumis</h1>
+    <a href="{{ projet.fichier_projet.url }}" download>Télécharger le projet soumis</a>
+</body>
+</html>

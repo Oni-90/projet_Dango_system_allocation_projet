@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>Charger Projet Étudiant</title>
+</head>
+<body>
+    <h1>Charger Projet Étudiant</h1>
+    <p>Projet en cours : {{ projet.intitule }}</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <p>Confirmer et Soumettre {{ form.confirmation }}</p>
+        <br>
+       <p></p> {{ form.fichier_traite }}</p>
+        
+        <br>
+        
+        <button type="submit">Soumettre</button>
+    </form>
+    
+    <a href="{% url 'liste_projets_etudiant' %}">Retour à la liste des projets étudiant</a>
+
+    
+</body>
+</html>
